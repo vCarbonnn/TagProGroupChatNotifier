@@ -12,6 +12,7 @@
 //** ** **//
 requestTerm = "yourName"; //This will change the text required for you to be alerted.
 groupChatColour = "white"; //This will change the text colour of all chat in the group. General colours or a specific hex code (e.g: #33CCCC) can be used.
+groupChatInputBoxColour = "white"; //This will change the text colour of the input box. General colours or a specific hex code (e.g: #33CCCC) can be used.
 customRequestedTabTitle = "*REQUESTED*"; //This will change the text that will appear in the tab's name when you are requested - Default should be fine.
 soundEnabled = true; //Change to false if you want the sound to be disabled.
 soundFileURL = 'https://dl.dropboxusercontent.com/u/2922572/180821__empty-bell__beep.wav'; //This is the sound which is played when you are requested.
@@ -21,6 +22,7 @@ $('#chat').before( "<audio id='sound' style='display: none;'></audio>" );
 sound = document.getElementById('sound');
 sound.src = soundFileURL;
 document.getElementById("chat").style.color = groupChatColour;
+document.getElementById("chatSend").style.color = groupChatInputBoxColour;
 
 chatLength = 0;
 
