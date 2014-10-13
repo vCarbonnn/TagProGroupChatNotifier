@@ -16,7 +16,6 @@ groupChatColour = "white"; //This will change the text colour of all chat in the
 groupChatInputBoxColour = "white"; //This will change the text colour of the input box. General colours or a specific hex code (e.g: #33CCCC) can be used.
 
 customRequestedTabTitle = "*REQUESTED*"; //This will change the text that will appear in the tab's name when you are requested - Default should be fine.
-
 soundEnabled = true; //Change to false if you want the sound to be disabled.
 soundFileURL = 'http://www.freesound.org/data/previews/200/200813_2585050-lq.mp3'; //This is the sound which is played when you are requested.
 //** ** ** ** ** ** ** **//
