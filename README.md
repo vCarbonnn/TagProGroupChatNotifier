@@ -8,7 +8,7 @@ Then press the 'raw' button, which will take you to a Tampermonkey (or equivalen
 
 Now navigate to the Tampermonkey dashboard and select the userscript 'TagPro Group Chat Notifier'.
 
-
+===
 
 If you don't know how to do this, follow this:
 
@@ -18,10 +18,10 @@ If you don't know how to do this, follow this:
 
 \2. Pick the 'TagPro Group Chat Notifier' userscript to edit it.
 
-\3. Now look at the small bit of code after where you see '// ==/UserScript=='. In here you can edit some clearly labelled components. 
+===
 
-
-
+Now look at the small bit of code after where you see '// ==/UserScript=='. In here you can edit some clearly labelled components.
 The most important is: requestTerm = "yourName";    which needs to be changed accordingly.
+
 
 You can also then edit colours and other stuff, then finalise the install process by pressing the Install button!
