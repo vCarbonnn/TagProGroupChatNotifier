@@ -25,12 +25,11 @@ soundFileURL = 'http://www.freesound.org/data/previews/200/200813_2585050-lq.mp3
 $('#chat').before( "<audio id='sound' style='display: none;'></audio>" );
 sound = document.getElementById('sound');
 sound.src = soundFileURL;
+document.getElementById("chat").style.color = groupChatColour;
+document.getElementById("chatSend").style.color = groupChatInputBoxColour;
 chatLength = 0;
 
 function chatBot() {
-    document.getElementById("chat").style.color = groupChatColour;
-    document.getElementById("chatSend").style.color = groupChatInputBoxColour;
-    
     newChatLength = $('#chat>div').length;
     if ( newChatLength > chatLength ) {
         if ( $('#chat>div').last()[0].innerText.toLowerCase().search("!"+requestTerm) >= 0 ) {
@@ -49,7 +48,6 @@ function chatBot() {
     setInterval(function checkSeen() {
         if (document.getElementById("chatSend").value == "") {
             document.title = "TagPro Group";
-            document.getElementById("chatSend").style.color = "white";
         }
     }, 3000);
 }
