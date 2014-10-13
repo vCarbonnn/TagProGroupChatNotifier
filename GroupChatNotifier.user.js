@@ -38,7 +38,7 @@ function chatBot() {
             }  
             document.title = customRequestedTabTitle;
             if (document.getElementById("chatSend").value == "") {
-                document.getElementById("chatSend").value = " ";
+                document.getElementById("chatSend").value == " ";
             }
         }
     }
