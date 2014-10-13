@@ -26,7 +26,7 @@ chatLength = 0;
 function chatBot() {
     document.getElementById("chat").style.color = groupChatColour;
     document.getElementById("chatSend").style.color = groupChatInputBoxColour;
-
+    
     newChatLength = $('#chat>div').length;
     if ( newChatLength > chatLength ) {
         if ( $('#chat>div').last()[0].innerText.toLowerCase().search("!"+requestTerm) >= 0 ) {
