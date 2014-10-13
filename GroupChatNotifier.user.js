@@ -2,7 +2,7 @@
 // @name          TagPro Group Chat Notifier
 // @description   Notifies you if your name is called in TagPro Group Chat.
 // @author        Carbon
-// @version       1.0
+// @version       1.1
 // @namespace     http://www.reddit.com/user/vCarbonnn/
 // @include       http://tagpro-*.koalabeast.com/groups/*
 // @include       http://tangent.jukejuice.com/groups/*
@@ -32,12 +32,12 @@ chatLength = 0;
 function chatBot() {
     newChatLength = $('#chat>div').length;
     if ( newChatLength > chatLength ) {
-        if ( $('#chat>div').last()[0].innerText.toLowerCase().search("!"+requestTerm) >= 0 ) {
+        if ( $('#chat>div').last()[0].innerText.search("!"+requestTerm) >= 0 ) {
             if(soundEnabled) {
                 sound.play();
             }  
             document.title = customRequestedTabTitle;
-            if (document.getElementById("chatSend").value == "") {
+            if (document.getElementById("chatSend").value === "") {
                 document.getElementById("chatSend").value = " ";
             }
         }
@@ -46,7 +46,7 @@ function chatBot() {
     chatLength = newChatLength;
 
     setInterval(function checkSeen() {
-        if (document.getElementById("chatSend").value == "") {
+        if (document.getElementById("chatSend").value === "") {
             document.title = "TagPro Group";
         }
     }, 3000);
