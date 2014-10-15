@@ -2,7 +2,7 @@
 // @name          TagPro Group Chat Notifier
 // @description   Notifies you if your name is called in TagPro Group Chat.
 // @author        Carbon
-// @version       1.1
+// @version       1.2
 // @namespace     http://www.reddit.com/user/vCarbonnn/
 // @include       http://tagpro-*.koalabeast.com/groups/*
 // @include       http://tangent.jukejuice.com/groups/*
@@ -10,6 +10,7 @@
 // ==/UserScript==
 
 //** editable variables **//
+customRequestTerm = false; //If you want to change the default request term (your tagpro name), change this to true, and proceed to change the requestTerm below
 requestTerm = "yourName"; //This will change the text required for you to be alerted.
 
 groupChatColour = "white"; //This will change the text colour of all chat in the group. General colours or a specific hex code (e.g: #33CCCC) can be used.
@@ -29,7 +30,29 @@ document.getElementById("chat").style.color = groupChatColour;
 document.getElementById("chatSend").style.color = groupChatInputBoxColour;
 chatLength = 0;
 
+function getName() {
+    var mainText = $('.you:eq(0)').html();
+    var indexFound = 0;
+    var notFound = true;
+    var i = 0;
+    while(notFound) {
+        if(mainText[i] == "<") {
+            indexFound = i;
+            notFound = false;
+        }
+        i++;
+    }
+
+    var conCat = "";
+    for(var j=0; j<indexFound; j++) {
+        conCat = conCat + mainText[j];
+    }
+    return conCat.toLowerCase();    
+}
+
 function chatBot() {
+    if(!customRequestTerm)
+        requestTerm = getName();
     newChatLength = $('#chat>div').length;
     if ( newChatLength > chatLength ) {
         if ( $('#chat>div').last()[0].innerText.search("!"+requestTerm) >= 0 ) {
