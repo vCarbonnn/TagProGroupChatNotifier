@@ -2,7 +2,7 @@
 // @name          TagPro Group Chat Notifier
 // @description   Notifies you if your name is called in TagPro Group Chat.
 // @author        Carbon
-// @version       1.2
+// @version       1.3
 // @namespace     http://www.reddit.com/user/vCarbonnn/
 // @include       http://tagpro-*.koalabeast.com/groups/*
 // @include       http://tangent.jukejuice.com/groups/*
@@ -31,10 +31,10 @@ document.getElementById("chatSend").style.color = groupChatInputBoxColour;
 chatLength = 0;
 
 function getName() {
-    var mainText = $('.you:eq(0)').html();
-    var indexFound = 0;
-    var notFound = true;
-    var i = 0;
+    mainText = $('.you:eq(0)').html();
+    indexFound = 0;
+    notFound = true;
+    i = 0;
     while(notFound) {
         if(mainText[i] == "<") {
             indexFound = i;
@@ -43,8 +43,8 @@ function getName() {
         i++;
     }
 
-    var conCat = "";
-    for(var j=0; j<indexFound; j++) {
+    conCat = "";
+    for(j=0; j<indexFound; j++) {
         conCat = conCat + mainText[j];
     }
     return conCat.toLowerCase();    
@@ -55,7 +55,8 @@ function chatBot() {
         requestTerm = getName();
     newChatLength = $('#chat>div').length;
     if ( newChatLength > chatLength ) {
-        if ( $('#chat>div').last()[0].innerText.search("!"+requestTerm) >= 0 ) {
+        lastText = $('#chat>div').last()[0].innerText;
+        if ( lastText.toLowerCase().search("!"+requestTerm) >= 0 ) {
             if(soundEnabled) {
                 sound.play();
             }  
