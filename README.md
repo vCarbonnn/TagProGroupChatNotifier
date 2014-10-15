@@ -39,7 +39,7 @@ Now read the next section, 'Saving Changes'.
 ===
 Saving Changes
 ===
-To save any changes you may have made, press the 'save' button near the top left of your Tampermonkey screen, be careful that you DO NOT press the 'save to disk' button. Only press the button circled here: imgur';;
+To save any changes you may have made, press the 'save' button near the top left of your Tampermonkey screen, be careful that you DO NOT press the 'save to disk' button. Only press the button circled here: http://i.imgur.com/l7ds0T2.png
 
 Once you have pressed the save button, another screen may appear, with a prominent 'Modify' button. Press this button. The changes have now been submitted.
 
