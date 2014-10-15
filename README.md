@@ -8,6 +8,8 @@ Then press the 'raw' button, which will take you to a Tampermonkey (or equivalen
 
 If you want a custom request name, read the next section 'Custom Request Name'. If not, the script will use the TagPro name which you enter the group with. Skip ahead to the section 'Custom Colours'.
 
+A full video guide can be seen here: https://www.youtube.com/watch?v=kWZlLLlcbow
+
 
 ===
 Custom Request Name
