@@ -32,8 +32,7 @@ chatLength = 0;
 
 
 function chatBot() {
-    if(!customRequestTerm)
-    {
+    if(!customRequestTerm) {
         mainText = $('.you:eq(0)').html();
         indexFound = 0;
         notFound = true;
@@ -52,8 +51,7 @@ function chatBot() {
         }
         requestTerm = conCat.toLowerCase();   
     }
-    else
-    {
+    else {
         requestTerm = requestTerm.toLowerCase();
     }
 
