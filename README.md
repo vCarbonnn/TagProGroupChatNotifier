@@ -1,4 +1,4 @@
-TagProGroupChatNotifier
+TagProGroupChatNotifier Userscript
 =======================
 
 This userscript notifies you if your name is called in TagPro Group Chat.
