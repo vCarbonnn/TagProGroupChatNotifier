@@ -1,7 +1,7 @@
 TagProGroupChatNotifier
 =======================
 
-Notifies you if your name is called in TagPro Group Chat.
+This userscript notifies you if your name is called in TagPro Group Chat.
 
 To use this userscript, make sure Tampermonkey (or equivalent) is installed.
 Then press the 'raw' button, which will take you to a Tampermonkey (or equivalent) page with a button to install which you can press.
