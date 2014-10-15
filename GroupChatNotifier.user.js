@@ -2,7 +2,7 @@
 // @name          TagPro Group Chat Notifier
 // @description   Notifies you if your name is called in TagPro Group Chat.
 // @author        Carbon
-// @version       1.4
+// @version       1.5
 // @namespace     http://www.reddit.com/user/vCarbonnn/
 // @include       http://tagpro-*.koalabeast.com/groups/*
 // @include       http://tangent.jukejuice.com/groups/*
@@ -61,6 +61,7 @@ function chatBot() {
     newChatLength = $('#chat>div').length;
     if ( newChatLength > chatLength ) {
         lastText = $('#chat>div').last()[0].innerText;
+        //lastText = lastText.substring(0,(requestTerm.length)); //Used if you want a notification when anyone says your name without an exclamation mark - remove "!"+ in the line below too
         if ( lastText.toLowerCase().search("!"+requestTerm) >= 0 ) {
             if(soundEnabled) {
                 sound.play();
