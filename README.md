@@ -35,7 +35,13 @@ Custom Colours
 To change the colours of the text and your input box text, change the clearly outlined variables groupChatColour and groupChatInputBoxColour. General colours such as "blue" can be used, or a specific hex code (e.g: #33CCCC).
 
 Now read the next section, 'Saving Changes'.
+
 ===
 Saving Changes
 ===
+To save any changes you may have made, press the 'save' button near the top left of your Tampermonkey screen, be careful that you DO NOT press the 'save to disk' button. Only press the button circled here: imgur';;
+
+Once you have pressed the save button, another screen may appear, with a prominent 'Modify' button. Press this button. The changes have now been submitted.
+
+For changes to take effect in a current TagPro group, you must refresh (F5).
 
