@@ -2,7 +2,7 @@
 // @name          TagPro Group Chat Notifier
 // @description   Notifies you if your name is called in TagPro Group Chat.
 // @author        Carbon
-// @version       1.3
+// @version       1.4
 // @namespace     http://www.reddit.com/user/vCarbonnn/
 // @include       http://tagpro-*.koalabeast.com/groups/*
 // @include       http://tangent.jukejuice.com/groups/*
@@ -30,29 +30,34 @@ document.getElementById("chat").style.color = groupChatColour;
 document.getElementById("chatSend").style.color = groupChatInputBoxColour;
 chatLength = 0;
 
-function getName() {
-    mainText = $('.you:eq(0)').html();
-    indexFound = 0;
-    notFound = true;
-    i = 0;
-    while(notFound) {
-        if(mainText[i] == "<") {
-            indexFound = i;
-            notFound = false;
-        }
-        i++;
-    }
-
-    conCat = "";
-    for(j=0; j<indexFound; j++) {
-        conCat = conCat + mainText[j];
-    }
-    return conCat.toLowerCase();    
-}
 
 function chatBot() {
     if(!customRequestTerm)
-        requestTerm = getName();
+    {
+        mainText = $('.you:eq(0)').html();
+        indexFound = 0;
+        notFound = true;
+        i = 0;
+        while(notFound) {
+            if(mainText[i] == "<") {
+                indexFound = i;
+                notFound = false;
+            }
+            i++;
+        }
+
+        conCat = "";
+        for(j=0; j<indexFound; j++) {
+            conCat = conCat + mainText[j];
+        }
+        requestTerm = conCat.toLowerCase();   
+    }
+    else
+    {
+        requestTerm = requestTerm.toLowerCase();
+    }
+
+
     newChatLength = $('#chat>div').length;
     if ( newChatLength > chatLength ) {
         lastText = $('#chat>div').last()[0].innerText;
