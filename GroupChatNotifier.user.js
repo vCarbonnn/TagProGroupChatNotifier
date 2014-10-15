@@ -59,7 +59,7 @@ function chatBot() {
     newChatLength = $('#chat>div').length;
     if ( newChatLength > chatLength ) {
         lastText = $('#chat>div').last()[0].innerText;
-        //lastText = lastText.substring(0,(requestTerm.length)); //Used if you want a notification when anyone says your name without an exclamation mark - remove "!"+ in the line below too
+        //lastText = lastText.substring((requestTerm.length),(lastText.length)); //Used if you want a notification when anyone says your name without an exclamation mark - remove "!"+ in the line below too
         if ( lastText.toLowerCase().search("!"+requestTerm) >= 0 ) {
             if(soundEnabled) {
                 sound.play();
