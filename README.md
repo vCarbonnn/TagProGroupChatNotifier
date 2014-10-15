@@ -44,4 +44,3 @@ To save any changes you may have made, press the 'save' button near the top left
 Once you have pressed the save button, another screen may appear, with a prominent 'Modify' button. Press this button. The changes have now been submitted.
 
 For changes to take effect in a current TagPro group, you must refresh (F5).
-
