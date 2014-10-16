@@ -2,11 +2,13 @@
 // @name          TagPro Group Chat Notifier
 // @description   Notifies you if your name is called in TagPro Group Chat.
 // @author        Carbon
-// @version       1.5
+// @version       1.5.1
 // @namespace     http://www.reddit.com/user/vCarbonnn/
 // @include       http://tagpro-*.koalabeast.com/groups/*
 // @include       http://tangent.jukejuice.com/groups/*
 // @include       http://maptest.newcompte.fr/groups/*
+// @include       http://maptest2.newcompte.fr/groups/*
+// @include       http://maptest3.newcompte.fr/groups/*
 // ==/UserScript==
 
 //** editable variables **//
