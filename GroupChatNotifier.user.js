@@ -2,7 +2,7 @@
 // @name          TagPro Group Chat Notifier
 // @description   Notifies you if your name is called in TagPro Group Chat.
 // @author        Carbon
-// @version       1.5.1
+// @version       1.6.1
 // @namespace     http://www.reddit.com/user/vCarbonnn/
 // @include       http://tagpro-*.koalabeast.com/groups/*
 // @include       http://tangent.jukejuice.com/groups/*
@@ -22,18 +22,21 @@ customRequestedTabTitle = "*REQUESTED*"; //This will change the text that will a
 soundEnabled = true; //Change to false if you want the sound to be disabled.
 soundFileURL = 'http://www.freesound.org/data/previews/200/200813_2585050-lq.mp3'; //This is the sound which is played when you are requested.
 //** ** ** ** ** ** ** **//
-
-
-
-$('#chat').before( "<audio id='sound' style='display: none;'></audio>" );
-sound = document.getElementById('sound');
-sound.src = soundFileURL;
-document.getElementById("chat").style.color = groupChatColour;
-document.getElementById("chatSend").style.color = groupChatInputBoxColour;
 chatLength = 0;
+//** ** ** ** ** ** ** **//
 
-
-function chatBot() {
+function preLoad()
+{
+    console.log("Preloading content, then waiting 2 seconds for the group page to be ready.");
+    $('#chat').before( "<audio id='sound' style='display: none;'></audio>" );
+    sound = document.getElementById('sound');
+    sound.src = soundFileURL;
+    document.getElementById("chat").style.color = groupChatColour;
+    document.getElementById("chatSend").style.color = groupChatInputBoxColour;
+    setTimeout(postLoad, 3000);
+}
+function postLoad()
+{
     if(!customRequestTerm) {
         mainText = $('.you:eq(0)').html();
         indexFound = 0;
@@ -56,8 +59,9 @@ function chatBot() {
     else {
         requestTerm = requestTerm.toLowerCase();
     }
-
-
+    console.log("Page is ready, Request term is '"+requestTerm+"'.");
+}
+function chatBot() {
     newChatLength = $('#chat>div').length;
     if ( newChatLength > chatLength ) {
         lastText = $('#chat>div').last()[0].innerText;
@@ -81,5 +85,5 @@ function chatBot() {
         }
     }, 3000);
 }
-
+preLoad();
 setInterval(chatBot, 500);
