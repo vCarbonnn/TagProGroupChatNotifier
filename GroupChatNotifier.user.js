@@ -2,7 +2,7 @@
 // @name          TagPro Group Chat Notifier
 // @description   Notifies you if your name is called in TagPro Group Chat.
 // @author        Carbon
-// @version       1.5.1
+// @version       1.6.0
 // @namespace     http://www.reddit.com/user/vCarbonnn/
 // @include       http://tagpro-*.koalabeast.com/groups/*
 // @include       http://tangent.jukejuice.com/groups/*
@@ -23,8 +23,7 @@ soundEnabled = true; //Change to false if you want the sound to be disabled.
 soundFileURL = 'http://www.freesound.org/data/previews/200/200813_2585050-lq.mp3'; //This is the sound which is played when you are requested.
 //** ** ** ** ** ** ** **//
 
-
-
+var timeOne = (new Date()).getTime();
 $('#chat').before( "<audio id='sound' style='display: none;'></audio>" );
 sound = document.getElementById('sound');
 sound.src = soundFileURL;
@@ -32,32 +31,35 @@ document.getElementById("chat").style.color = groupChatColour;
 document.getElementById("chatSend").style.color = groupChatInputBoxColour;
 chatLength = 0;
 
+if(!customRequestTerm) {
+    mainText = $('.you:eq(0)').html();
+    indexFound = 0;
+    notFound = true;
+    i = 0;
+    while(notFound) {
+        if(mainText[i] == "<") {
+            indexFound = i;
+            notFound = false;
+        }
+        i++;
+    }
+
+    conCat = "";
+    for(j=0; j<indexFound; j++) {
+        conCat = conCat + mainText[j];
+    }
+    requestTerm = conCat.toLowerCase();   
+}
+else {
+    requestTerm = requestTerm.toLowerCase();
+}
+
+var timeTwo = (new Date()).getTime();
+var timeTaken = timeTwo-timeOne;
+console.log("Request term is '"+requestTerm+"'.");
+console.log("Initialised in "+timeTaken + "s.");
 
 function chatBot() {
-    if(!customRequestTerm) {
-        mainText = $('.you:eq(0)').html();
-        indexFound = 0;
-        notFound = true;
-        i = 0;
-        while(notFound) {
-            if(mainText[i] == "<") {
-                indexFound = i;
-                notFound = false;
-            }
-            i++;
-        }
-
-        conCat = "";
-        for(j=0; j<indexFound; j++) {
-            conCat = conCat + mainText[j];
-        }
-        requestTerm = conCat.toLowerCase();   
-    }
-    else {
-        requestTerm = requestTerm.toLowerCase();
-    }
-
-
     newChatLength = $('#chat>div').length;
     if ( newChatLength > chatLength ) {
         lastText = $('#chat>div').last()[0].innerText;
